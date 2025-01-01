@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Enhanced Risk Stratification</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">AI-Enhanced Risk Stratification for Myocarditis</h1>
+        <p class="lead">Monitor and predict myocarditis risk in children using advanced AI and wearable technology.</p>
+        <div id="risk-level" class="alert alert-info" role="alert">
+            Risk Level: Loading...
+        </div>
+    </div>
+    <script>
+        fetch('/risk')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('risk-level').innerText = `Risk Level: ${data.risk_level}`;
+            });
+    </script>
+</body>
+</html>
